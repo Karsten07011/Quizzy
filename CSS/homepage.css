@@ -1,15 +1,17 @@
-/* homepage.css */
+/* homepage.css - Enhanced Version */
 :root {
-  --primary: #2A2A3E;
-  --secondary: #3A3A4E;
+  --primary: #1A1A2E;
+  --secondary: #16213E;
   --accent: #06D6A0;
   --accent-hover: #04B486;
   --text: #FFFFFF;
   --overlay: rgba(0, 0, 0, 0.7);
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   --bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+  --glow: 0 0 20px;
 }
 
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -18,24 +20,52 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
-/* Fade-in Animation for Page Load */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-body {
-  animation: fadeIn 0.8s ease-out forwards;
+@keyframes fadeInUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Modern Navbar with Fade-in */
+@keyframes fadeOut {
+  to { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes slideDown {
+  to { transform: translateY(0); }
+}
+
+@keyframes borderPulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.8; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Header */
 .header {
   background: rgba(42, 42, 62, 0.95);
   padding: 1.5rem 2rem;
@@ -47,10 +77,6 @@ body {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   transform: translateY(-100%);
   animation: slideDown 0.6s var(--bounce) 0.2s forwards;
-}
-
-@keyframes slideDown {
-  to { transform: translateY(0); }
 }
 
 .logo {
@@ -65,19 +91,35 @@ body {
   animation: fadeIn 0.8s ease-out 0.4s forwards;
 }
 
-/* Quiz Container Grid with Staggered Animation */
+/* Main Content */
+.main-content {
+  padding-top: 6rem;
+}
+
+/* Quiz Preview Section */
+.quiz-preview-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s var(--bounce) 0.4s forwards;
+}
+
 .quiz-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding: 2rem;
-  margin-top: 6rem;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 4rem;
 }
 
-/* Quiz Frame Styling with Glow Effect */
+/* Quiz Frame Styling */
 .quiz-frame {
   position: relative;
   border-radius: 20px;
@@ -95,13 +137,6 @@ body {
 .quiz-frame:nth-child(2) { animation-delay: 0.5s; }
 .quiz-frame:nth-child(3) { animation-delay: 0.7s; }
 
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .quiz-frame::before {
   content: '';
   position: absolute;
@@ -115,6 +150,7 @@ body {
   transition: var(--transition);
 }
 
+/* Enhanced Hover Effects */
 .quiz-frame:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -125,27 +161,28 @@ body {
   opacity: 1;
 }
 
-/* Glow Effect on Hover */
+/* Animated Border on Hover */
 .quiz-frame::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  box-shadow: 0 0 30px rgba(6, 214, 160, 0.3);
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 22px;
+  border: 2px solid transparent;
   opacity: 0;
   transition: var(--transition);
   pointer-events: none;
 }
 
-#democracy-frame::after { box-shadow: 0 0 30px rgba(6, 214, 160, 0.4); }
-#dictatorship-frame::after { box-shadow: 0 0 30px rgba(233, 69, 96, 0.4); }
-#aristocracy-frame::after { box-shadow: 0 0 30px rgba(106, 76, 147, 0.4); }
+#democracy-frame::after { border-color: rgba(6, 214, 160, 0.6); }
+#dictatorship-frame::after { border-color: rgba(233, 69, 96, 0.6); }
+#aristocracy-frame::after { border-color: rgba(106, 76, 147, 0.6); }
 
 .quiz-frame:hover::after {
-  opacity: 0.8;
+  opacity: 1;
+  animation: borderPulse 2s infinite;
 }
 
 .quiz-image {
@@ -159,7 +196,7 @@ body {
   transform: scale(1.08);
 }
 
-/* Overlay Styling with Fade */
+/* Quiz Overlay */
 .quiz-overlay {
   position: absolute;
   top: 0;
@@ -181,7 +218,7 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* Quiz Info Styling with Slide-up */
+/* Quiz Info */
 .quiz-info {
   background: rgba(42, 42, 62, 0.9);
   padding: 1.5rem;
@@ -219,7 +256,7 @@ body {
   transform: translateX(0);
 }
 
-/* Play Button Styling with Pulse Effect */
+/* Play Button */
 .play-btn-container {
   display: flex;
   justify-content: center;
@@ -251,25 +288,10 @@ body {
   box-shadow: 0 5px 15px rgba(6, 214, 160, 0.3);
 }
 
-.play-btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-  transition: 0.5s;
-}
-
 .play-btn:hover {
   background: linear-gradient(45deg, var(--accent-hover), #0E6F8B);
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
-}
-
-.play-btn:hover::before {
-  left: 100%;
 }
 
 .play-btn svg {
@@ -282,14 +304,14 @@ body {
   transform: translateX(5px);
 }
 
-/* Page Transition Effect */
+/* Page Transition */
 .page-transition {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #06D6A0 0%, #118AB2 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   z-index: 9999;
   opacity: 0;
   pointer-events: none;
@@ -307,17 +329,90 @@ body {
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 5px solid rgba(255,255,255,0.3);
+  border: 5px solid rgba(6, 214, 160, 0.3);
   border-radius: 50%;
-  border-top-color: white;
+  border-top-color: var(--accent);
   animation: spin 1s ease-in-out infinite;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Information Sections */
+.info-section {
+  padding: 4rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Footer with Fade-in */
+.info-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-title {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-align: center;
+}
+
+.info-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.info-card {
+  background: rgba(42, 42, 62, 0.8);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+  border-top: 3px solid;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.info-card-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-card-icon {
+  font-size: 1.8rem;
+}
+
+.info-card-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* Frame-specific Styles */
+#democracy-frame .quiz-info,
+#democracy-info .info-card { 
+  border-color: #06D6A0;
+}
+
+#dictatorship-frame .quiz-info,
+#dictatorship-info .info-card { 
+  border-color: #E94560;
+}
+
+#aristocracy-frame .quiz-info,
+#aristocracy-info .info-card { 
+  border-color: #6A4C93;
+}
+
+/* Footer */
 .footer {
   background: var(--primary);
   padding: 1.5rem;
@@ -328,24 +423,28 @@ body {
   animation: fadeIn 0.8s ease-out 1s forwards;
 }
 
-/* Frame-specific Accents */
-#democracy-frame .quiz-info { border-color: #06D6A0; }
-#dictatorship-frame .quiz-info { border-color: #E94560; }
-#aristocracy-frame .quiz-info { border-color: #6A4C93; }
+/* Exit Animations */
+.quiz-frame.exiting {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+/* Scroll Out Animation */
+.quiz-frame.scroll-out {
+  animation: fadeOut 0.5s ease forwards;
+}
 
 /* Responsive Design */
 @media (max-width: 1200px) {
-  .quiz-container {
+  .quiz-container,
+  .info-content {
     grid-template-columns: 1fr 1fr;
-    max-width: 800px;
   }
 }
 
 @media (max-width: 768px) {
-  .quiz-container {
+  .quiz-container,
+  .info-content {
     grid-template-columns: 1fr;
-    max-width: 500px;
-    padding: 1rem;
   }
 
   .header {
@@ -354,5 +453,10 @@ body {
 
   .logo {
     font-size: 1.5rem;
+  }
+
+  .section-title,
+  .info-title {
+    font-size: 2rem;
   }
 }

@@ -9,6 +9,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../CSS/homepage.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <!-- Page transition overlay -->
@@ -18,105 +22,232 @@
       <h1 class="logo">Quizzy</h1>
     </header>
 
-    <main class="quiz-container">
-      <!-- Democracy Frame -->
-      <div class="quiz-frame" id="democracy-frame">
-        <img
-          src="../Images/democratie.jpg"
-          alt="Democracy"
-          class="quiz-image"
-        />
-        <div class="quiz-overlay">
-          <div class="quiz-info">
-            <h3 class="quiz-title">Democracy</h3>
-            <p class="quiz-description">
-              Government by the people through elected representatives
-            </p>
+    <main class="main-content">
+      <!-- Quiz Preview Section -->
+      <section class="quiz-preview-section">
+        <h2 class="section-title">Choose Your Quiz</h2>
+        <div class="quiz-container">
+          <!-- Democracy Frame -->
+          <div class="quiz-frame" id="democracy-frame">
+            <img
+              src="../Images/democratie.jpg"
+              alt="Democracy"
+              class="quiz-image"
+            />
+            <div class="quiz-overlay">
+              <div class="quiz-info">
+                <h3 class="quiz-title">Democracy</h3>
+                <p class="quiz-description">
+                  Government by the people through elected representatives
+                </p>
+              </div>
+              <div class="play-btn-container">
+                <button
+                  class="play-btn"
+                  onclick="navigateToQuiz('./Democratie/')"
+                >
+                  Play Now
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="play-btn-container">
-            <button class="play-btn" onclick="navigateToQuiz('./Democratie/')">
-              Play Now
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Dictatorship Frame -->
-      <div class="quiz-frame" id="dictatorship-frame">
-        <img
-          src="../Images/dictatuur.jpg"
-          alt="Dictatorship"
-          class="quiz-image"
-        />
-        <div class="quiz-overlay">
-          <div class="quiz-info">
-            <h3 class="quiz-title">Dictatorship</h3>
-            <p class="quiz-description">
-              Absolute power held by single individual/group
-            </p>
+          <!-- Dictatorship Frame -->
+          <div class="quiz-frame" id="dictatorship-frame">
+            <img
+              src="../Images/dictatuur.jpg"
+              alt="Dictatorship"
+              class="quiz-image"
+            />
+            <div class="quiz-overlay">
+              <div class="quiz-info">
+                <h3 class="quiz-title">Dictatorship</h3>
+                <p class="quiz-description">
+                  Absolute power held by single individual/group
+                </p>
+              </div>
+              <div class="play-btn-container">
+                <button
+                  class="play-btn"
+                  onclick="navigateToQuiz('./Dictator/')"
+                >
+                  Play Now
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
-          <div class="play-btn-container">
-            <button class="play-btn" onclick="navigateToQuiz('./Dictator/')">
-              Play Now
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Aristocracy Frame -->
-      <div class="quiz-frame" id="aristocracy-frame">
-        <img
-          src="../Images/aristocratie.webp"
-          alt="Aristocracy"
-          class="quiz-image"
-        />
-        <div class="quiz-overlay">
-          <div class="quiz-info">
-            <h3 class="quiz-title">Aristocracy</h3>
-            <p class="quiz-description">
-              Power held by privileged ruling class
-            </p>
-          </div>
-          <div class="play-btn-container">
-            <button
-              class="play-btn"
-              onclick="navigateToQuiz('./Aristocratie/')"
-            >
-              Play Now
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
+          <!-- Aristocracy Frame -->
+          <div class="quiz-frame" id="aristocracy-frame">
+            <img
+              src="../Images/aristocratie.webp"
+              alt="Aristocracy"
+              class="quiz-image"
+            />
+            <div class="quiz-overlay">
+              <div class="quiz-info">
+                <h3 class="quiz-title">Aristocracy</h3>
+                <p class="quiz-description">
+                  Power held by privileged ruling class
+                </p>
+              </div>
+              <div class="play-btn-container">
+                <button
+                  class="play-btn"
+                  onclick="navigateToQuiz('./Aristocratie/')"
+                >
+                  Play Now
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <!-- Democracy Info Section -->
+      <section class="info-section" id="democracy-info">
+        <h2 class="info-title">About Democracy</h2>
+        <div class="info-content">
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-vote-yea info-card-icon"></i> Voting System
+            </h3>
+            <p class="info-card-text">
+              Democracy is characterized by free and fair elections where
+              citizens have the right to vote for their representatives. This
+              quiz will test your knowledge about different voting systems
+              around the world.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-balance-scale info-card-icon"></i> Rights &
+              Freedoms
+            </h3>
+            <p class="info-card-text">
+              Democratic systems protect fundamental human rights and freedoms.
+              Learn about constitutional protections, civil liberties, and how
+              democracies balance individual rights with collective needs.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-landmark info-card-icon"></i> Government
+              Structure
+            </h3>
+            <p class="info-card-text">
+              From parliamentary to presidential systems, democracies come in
+              many forms. Test your understanding of separation of powers,
+              checks and balances, and different democratic models.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Dictatorship Info Section -->
+      <section class="info-section" id="dictatorship-info">
+        <h2 class="info-title">About Dictatorship</h2>
+        <div class="info-content">
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-crown info-card-icon"></i> Power Concentration
+            </h3>
+            <p class="info-card-text">
+              Dictatorships concentrate power in the hands of a single leader or
+              small group. This quiz explores how dictators maintain control and
+              the mechanisms of authoritarian rule throughout history.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-gavel info-card-icon"></i> Legal Systems
+            </h3>
+            <p class="info-card-text">
+              In dictatorships, the legal system often serves the ruler rather
+              than justice. Test your knowledge about how laws are created and
+              enforced in authoritarian regimes.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-user-shield info-card-icon"></i> Security
+              Apparatus
+            </h3>
+            <p class="info-card-text">
+              Dictatorships frequently rely on extensive security forces to
+              maintain control. Learn about the role of military, police, and
+              intelligence agencies in supporting authoritarian rule.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Aristocracy Info Section -->
+      <section class="info-section" id="aristocracy-info">
+        <h2 class="info-title">About Aristocracy</h2>
+        <div class="info-content">
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-chess-queen info-card-icon"></i> Noble Rule
+            </h3>
+            <p class="info-card-text">
+              Aristocracy is government by a privileged nobility or elite class.
+              This quiz covers historical aristocratic systems and how power was
+              traditionally inherited among noble families.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-gem info-card-icon"></i> Wealth & Power
+            </h3>
+            <p class="info-card-text">
+              Aristocratic systems often link political power to land ownership
+              and wealth. Test your knowledge about how economic and political
+              power intersected in aristocratic societies.
+            </p>
+          </div>
+          <div class="info-card">
+            <h3 class="info-card-title">
+              <i class="fas fa-book info-card-icon"></i> Cultural Influence
+            </h3>
+            <p class="info-card-text">
+              Aristocracies have significantly influenced art, culture, and
+              education. Explore how noble classes shaped cultural development
+              and the legacy they left behind.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
