@@ -15,6 +15,59 @@ function debounce(func, wait = 20, immediate = true) {
   };
 }
 
+// Create floating particles background
+function createParticles() {
+  const particlesContainer = document.querySelector(".particles");
+  const particleCount = Math.floor(window.innerWidth / 10);
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement("div");
+    particle.classList.add("particle");
+
+    // Random size between 1px and 3px
+    const size = Math.random() * 2 + 1;
+    particle.style.width = `${size}px`;
+    particle.style.height = `${size}px`;
+
+    // Random position
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+
+    // Random animation
+    const duration = Math.random() * 20 + 10;
+    const delay = Math.random() * 5;
+    particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+
+    particlesContainer.appendChild(particle);
+  }
+
+  // Add CSS for animation
+  const style = document.createElement("style");
+  style.textContent = `
+    @keyframes float {
+      0%, 100% {
+        transform: translate(0, 0);
+      }
+      25% {
+        transform: translate(${Math.random() * 100 - 50}px, ${
+    Math.random() * 100 - 50
+  }px);
+      }
+      50% {
+        transform: translate(${Math.random() * 100 - 50}px, ${
+    Math.random() * 100 - 50
+  }px);
+      }
+      75% {
+        transform: translate(${Math.random() * 100 - 50}px, ${
+    Math.random() * 100 - 50
+  }px);
+      }
+    }
+  `;
+  document.head.appendChild(style);
+}
+
 // Optimized navigation with requestAnimationFrame
 function navigateToQuiz(page) {
   const transition = document.querySelector(".page-transition");
@@ -24,7 +77,7 @@ function navigateToQuiz(page) {
   requestAnimationFrame(() => {
     setTimeout(() => {
       window.location.href = page;
-    }, 600); // Reduced from 800ms to 600ms
+    }, 600);
   });
 }
 
@@ -47,7 +100,7 @@ function initAnimations() {
             requestAnimationFrame(() => {
               entry.target.classList.add("loaded");
             });
-          }, index * 100); // Reduced delay between frames
+          }, index * 100);
         }
       });
     },
@@ -61,6 +114,9 @@ function initAnimations() {
 
 // Initialize with DOMContentLoaded
 document.addEventListener("DOMContentLoaded", () => {
+  // Create particles background
+  createParticles();
+
   // Use rAF to ensure smooth start
   requestAnimationFrame(() => {
     initAnimations();
@@ -89,6 +145,9 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener(
   "resize",
   debounce(() => {
-    // Handle any responsive adjustments
+    // Recreate particles on resize
+    const particles = document.querySelector(".particles");
+    particles.innerHTML = "";
+    createParticles();
   }, 100)
 );

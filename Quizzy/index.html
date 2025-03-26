@@ -1,0 +1,175 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quizzy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Quizzy</h1>
+    </header>
+
+    <main class="quiz-container">
+      <!-- Democracy Frame -->
+      <div class="quiz-frame" id="democracy-frame">
+        <img
+          src="../Images/democratie.jpg"
+          alt="Democracy"
+          class="quiz-image"
+        />
+        <div class="quiz-overlay">
+          <div class="quiz-info">
+            <h3 class="quiz-title">Democracy</h3>
+            <p class="quiz-description">
+              Government by the people through elected representatives
+            </p>
+          </div>
+          <div class="leaderboard">
+            <h4 class="leaderboard-title">Top Players</h4>
+            <div class="leaderboard-entry gold">
+              <span>1. Alex</span>
+              <span>12/12</span>
+            </div>
+            <div class="leaderboard-entry silver">
+              <span>2. Sophie</span>
+              <span>11/12</span>
+            </div>
+            <div class="leaderboard-entry bronze">
+              <span>3. Thomas</span>
+              <span>10/12</span>
+            </div>
+          </div>
+          <div class="play-btn-container">
+            <button
+              class="play-btn"
+              onclick="window.location.href='./Democratie/'"
+            >
+              Play Now
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dictatorship Frame -->
+      <div class="quiz-frame" id="dictatorship-frame">
+        <img
+          src="../Images/dictatuur.jpg"
+          alt="Dictatorship"
+          class="quiz-image"
+        />
+        <div class="quiz-overlay">
+          <div class="quiz-info">
+            <h3 class="quiz-title">Dictatorship</h3>
+            <p class="quiz-description">
+              Absolute power held by single individual/group
+            </p>
+          </div>
+          <div class="leaderboard">
+            <h4 class="leaderboard-title">Top Players</h4>
+            <div class="leaderboard-entry gold">
+              <span>1. Emma</span>
+              <span>12/12</span>
+            </div>
+            <div class="leaderboard-entry silver">
+              <span>2. Lucas</span>
+              <span>11/12</span>
+            </div>
+            <div class="leaderboard-entry bronze">
+              <span>3. Lisa</span>
+              <span>10/12</span>
+            </div>
+          </div>
+          <div class="play-btn-container">
+            <button
+              class="play-btn"
+              onclick="window.location.href='./Dictator/'"
+            >
+              Play Now
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Aristocracy Frame -->
+      <div class="quiz-frame" id="aristocracy-frame">
+        <img
+          src="../Images/aristocratie.webp"
+          alt="Aristocracy"
+          class="quiz-image"
+        />
+        <div class="quiz-overlay">
+          <div class="quiz-info">
+            <h3 class="quiz-title">Aristocracy</h3>
+            <p class="quiz-description">
+              Power held by privileged ruling class
+            </p>
+          </div>
+          <div class="leaderboard">
+            <h4 class="leaderboard-title">Top Players</h4>
+            <div class="leaderboard-entry gold">
+              <span>1. David</span>
+              <span>12/12</span>
+            </div>
+            <div class="leaderboard-entry silver">
+              <span>2. Sarah</span>
+              <span>11/12</span>
+            </div>
+            <div class="leaderboard-entry bronze">
+              <span>3. Mike</span>
+              <span>10/12</span>
+            </div>
+          </div>
+          <div class="play-btn-container">
+            <button
+              class="play-btn"
+              onclick="window.location.href='./Aristocratie/'"
+            >
+              Play Now
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>© 2023 Quizzy. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
