@@ -1,10 +1,10 @@
-/* homepage.css - Complete Nederlandse Versie */
+/* homepage.css - Nederlandse Versie */
 :root {
-  --primary: #1A1A2E;
-  --secondary: #16213E;
-  --accent: #06D6A0;
-  --accent-hover: #04B486;
-  --text: #FFFFFF;
+  --primary: #1a1a2e;
+  --secondary: #16213e;
+  --accent: #06d6a0;
+  --accent-hover: #04b486;
+  --text: #ffffff;
   --overlay: rgba(0, 0, 0, 0.7);
   --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   --bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
@@ -19,7 +19,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   color: var(--text);
   min-height: 100vh;
@@ -29,40 +29,54 @@ body {
 
 /* Animaties */
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInUp {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(30px);
   }
-  to { 
+  to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes fadeOut {
-  to { 
+  to {
     opacity: 0;
     transform: translateY(20px);
   }
 }
 
 @keyframes slideDown {
-  to { transform: translateY(0); }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes borderPulse {
-  0% { box-shadow: 0 0 10px; }
-  50% { box-shadow: 0 0 20px; }
-  100% { box-shadow: 0 0 10px; }
+  0% {
+    box-shadow: 0 0 10px;
+  }
+  50% {
+    box-shadow: 0 0 20px;
+  }
+  100% {
+    box-shadow: 0 0 10px;
+  }
 }
 
 @keyframes spin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Navigatiebalk */
@@ -82,7 +96,7 @@ body {
 .logo {
   font-size: 2rem;
   font-weight: 700;
-  background: linear-gradient(45deg, var(--accent), #118AB2);
+  background: linear-gradient(45deg, var(--accent), #118ab2);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -133,18 +147,28 @@ body {
   border: 2px solid transparent;
 }
 
-.quiz-frame:nth-child(1) { animation-delay: 0.3s; }
-.quiz-frame:nth-child(2) { animation-delay: 0.5s; }
-.quiz-frame:nth-child(3) { animation-delay: 0.7s; }
+.quiz-frame:nth-child(1) {
+  animation-delay: 0.3s;
+}
+.quiz-frame:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.quiz-frame:nth-child(3) {
+  animation-delay: 0.7s;
+}
 
 .quiz-frame::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   z-index: 1;
   opacity: 0;
   transition: var(--transition);
@@ -154,7 +178,7 @@ body {
 .quiz-frame:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-  border-color: rgba(255,255,255,0.3);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .quiz-frame:hover::before {
@@ -179,7 +203,11 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
   opacity: 0;
   transition: var(--transition);
   display: flex;
@@ -247,7 +275,7 @@ body {
 }
 
 .play-btn {
-  background: linear-gradient(45deg, var(--accent), #118AB2);
+  background: linear-gradient(45deg, var(--accent), #118ab2);
   color: var(--text);
   border: none;
   padding: 1rem 2rem;
@@ -265,7 +293,7 @@ body {
 }
 
 .play-btn:hover {
-  background: linear-gradient(45deg, var(--accent-hover), #0E6F8B);
+  background: linear-gradient(45deg, var(--accent-hover), #0e6f8b);
   transform: scale(1.05);
   box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
 }
@@ -317,8 +345,8 @@ body {
   max-width: 1400px;
   margin: 0 auto;
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s var(--bounce);
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .info-section.visible {
@@ -351,23 +379,11 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
   border-top: 3px solid;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s var(--bounce);
 }
-
-.info-section.visible .info-card {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.info-section.visible .info-card:nth-child(1) { transition-delay: 0.2s; }
-.info-section.visible .info-card:nth-child(2) { transition-delay: 0.3s; }
-.info-section.visible .info-card:nth-child(3) { transition-delay: 0.4s; }
 
 .info-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .info-card-title {
@@ -391,32 +407,17 @@ body {
 /* Frame-specifieke Stijlen */
 #democracy-frame .quiz-info,
 #democracy-info .info-card {
-  border-color: #06D6A0;
-}
-
-#democracy-info .info-card:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
-              var(--glow) rgba(6, 214, 160, 0.2);
+  border-color: #06d6a0;
 }
 
 #dictatorship-frame .quiz-info,
 #dictatorship-info .info-card {
-  border-color: #E94560;
-}
-
-#dictatorship-info .info-card:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
-              var(--glow) rgba(233, 69, 96, 0.2);
+  border-color: #e94560;
 }
 
 #aristocracy-frame .quiz-info,
 #aristocracy-info .info-card {
-  border-color: #6A4C93;
-}
-
-#aristocracy-info .info-card:hover {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 
-              var(--glow) rgba(106, 76, 147, 0.2);
+  border-color: #6a4c93;
 }
 
 /* Footer */
@@ -461,9 +462,5 @@ body {
   .section-title,
   .info-title {
     font-size: 2rem;
-  }
-
-  .info-section.visible .info-card {
-    transition-delay: 0s !important;
   }
 }

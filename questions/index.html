@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="../CSS/questions.css" />
+  </head>
+  <body>
+    <div class="quiz-container">
+      <h1 id="quiz-title">Quiz</h1>
+      <p id="quiz-description"></p>
+
+      <div id="progress">Question 1 of <span id="total-questions">0</span></div>
+      <div class="progress-bar">
+        <div id="progress-fill"></div>
+      </div>
+
+      <h2 id="question-text">Loading questions...</h2>
+      <div id="options-container" class="options-grid"></div>
+
+      <div id="feedback" class="hidden"></div>
+      <button id="confirm-button" class="action-button hidden">
+        Confirm Answer
+      </button>
+      <button id="next-button" class="action-button hidden">
+        Next Question
+      </button>
+
+      <div id="results-container" class="hidden">
+        <h2>Quiz Completed!</h2>
+        <p>
+          You answered <span id="score">0</span> out of
+          <span id="total">0</span> questions correctly.
+        </p>
+        <button id="restart-button" class="action-button">Restart Quiz</button>
+        <button id="choose-another-button" class="action-button">
+          Choose Another Quiz
+        </button>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="../Scripts/questions.js"></script>
+  </body>
+</html>

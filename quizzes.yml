@@ -1,0 +1,273 @@
+quizzes:
+  - id: "democratie"
+    title: "democratie Quiz"
+    description: "Test your knowledge of democratie"
+    questions:
+      - question: "Wat betekent stemmen?"
+        options:
+          - "Een cadeau geven aan een vriend"
+          - "Zelf kiezen wie het land of de stad bestuurt"
+          - "Een wedstrijd winnen"
+        correctAnswer: 1
+
+      - question: "Vanaf welke leeftijd mag je stemmen in Nederland?"
+        options:
+          - "16 jaar"
+          - "18 jaar"
+          - "21 jaar"
+        correctAnswer: 1
+
+      - question: "Hoe heet de groep mensen die het land bestuurt?"
+        options:
+          - "De koning"
+          - "De regering"
+          - "De jury"
+        correctAnswer: 1
+
+      - question: "Hoe vaak zijn er verkiezingen in Nederland?"
+        options:
+          - "Elke 2 jaar"
+          - "Elke 4 jaar"
+          - "Elke 10 jaar"
+        correctAnswer: 1
+
+      - question: "Wat krijg je als je mag stemmen?"
+        options:
+          - "Een stempas"
+          - "Een prijs"
+          - "Een certificaat"
+        correctAnswer: 0
+
+      - question: "Wat is een politieke partij?"
+        options:
+          - "Een groep mensen die samen muziek maakt"
+          - "Een club met dezelfde ideeen over het besturen van het land"
+          - "Een groot feest na de verkiezingen"
+        correctAnswer: 1
+
+      - question: "Waar stem je meestal?"
+        options:
+          - "Op school"
+          - "In een supermarkt"
+          - "In een stemlokaal"
+        correctAnswer: 2
+
+      - question: "Wat gebeurt er als je niet gaat stemmen?"
+        options:
+          - "Je stem telt niet mee"
+          - "Iemand anders stemt voor jou"
+          - "De verkiezingen worden opnieuw gehouden"
+        correctAnswer: 0
+
+      - question: "Hoe wordt de winnaar van de verkiezingen bepaald?"
+        options:
+          - "Door een loting"
+          - "Door wie het meeste geld heeft"
+          - "Door wie de meeste stemmen krijgt"
+        correctAnswer: 2
+
+      - question: "Waarom zijn eerlijke verkiezingen belangrijk?"
+        options:
+          - "Zodat iedereen kan meebeslissen"
+          - "Zodat alleen rijke mensen kunnen stemmen"
+          - "Zodat de koning wint"
+        correctAnswer: 0
+
+      - question: "Wat is een democratie?"
+        options:
+          - "Een land waar mensen zelf hun leiders kiezen"
+          - "Een land waar maar één persoon de baas is"
+          - "Een land zonder regels"
+        correctAnswer: 0
+
+      - question: "Kun je op meerdere mensen tegelijk stemmen?"
+        options:
+          - "Nee, je mag maar op één partij of persoon stemmen"
+          - "Ja, je mag zoveel stemmen als je wilt"
+          - "Alleen als je vrienden het goed vinden"
+        correctAnswer: 0
+
+      - question: "Wat gebeurt er na de verkiezingen?"
+        options:
+          - "De stemmen worden geteld en de winnaar wordt bekendgemaakt"
+          - "Iedereen krijgt een cadeautje"
+          - "Het stemmen begint opnieuw"
+        correctAnswer: 0
+
+      - question: "Kunnen verkiezingen in een ander land anders werken?"
+        options:
+          - "Ja, elk land heeft zijn eigen regels"
+          - "Nee, overal werkt het precies hetzelfde"
+          - "Alleen in Nederland zijn er verkiezingen"
+        correctAnswer: 0
+
+      - question: "Waarom is stemmen een recht en geen verplichting?"
+        options:
+          - "Omdat mensen zelf mogen kiezen of ze meedoen"
+          - "Omdat het te moeilijk is om te stemmen"
+          - "Omdat stemmen niet belangrijk is"
+        correctAnswer: 0
+
+  - id: "dictatorschap"
+    title: "dictatorschap Quiz"
+    description: "Challenge your dictatorschap knowledge"
+    questions:
+      - question: "Wat is een dictatuur?"
+        options:
+          - "Een regeringsvorm waarin burgers alle macht hebben"
+          - "Een regeringsvorm waarin één persoon of een kleine groep alle macht heeft"
+          - "Een regeringsvorm zonder leider"
+          - "Een systeem waarin alle partijen gelijk vertegenwoordigd zijn"
+        correctAnswer: 1
+
+      - question: "Wat is een kenmerk van een dictatuur?"
+        options:
+          - "Vrije en eerlijke verkiezingen"
+          - "Onafhankelijke media"
+          - "Censuur en onderdrukking van tegenstanders"
+          - "Volksvertegenwoordiging die de macht controleert"
+        correctAnswer: 2
+
+      - question: "Welke van de volgende is GEEN voorbeeld van een dictatuur?"
+        options:
+          - "Nazi-Duitsland"
+          - "Noord-Korea"
+          - "Sovjet-Unie onder Stalin"
+          - "Zweden"
+        correctAnswer: 3
+
+      - question: "Een militaire dictatuur wordt bestuurd door:"
+        options:
+          - "Een koning"
+          - "Het leger"
+          - "Een gekozen parlement"
+          - "Bedrijven"
+        correctAnswer: 1
+
+      - question: "Waar of niet waar: In een dictatuur hebben burgers volledige vrijheid van meningsuiting."
+        options:
+          - "Waar"
+          - "Niet waar"
+        correctAnswer: 1
+
+      - question: "Welke vorm van dictatuur baseert zich op een politieke ideologie, zoals communisme?"
+        options:
+          - "Militaire dictatuur"
+          - "Absolute monarchie"
+          - "Ideologische dictatuur"
+          - "Feodale dictatuur"
+        correctAnswer: 2
+
+      - question: "Welke dictator was leider van de Sovjet-Unie van 1924 tot 1953? "
+        options:
+          - "Lenin"
+          - "Stalin"
+          - "Gorbatsjov"
+          - "Mao Zedong"
+        correctAnswer: 1
+
+      - question: "Welke van de volgende landen is momenteel een dictatuur?"
+        options:
+          - "Canada"
+          - "Frankrijk"
+          - "Noord-Korea"
+          - "Japan"
+        correctAnswer: 2
+
+      - question: "Wat is een veelgebruikte methode van dictators om aan de macht te blijven?"
+        options:
+          - "Vrije pers"
+          - "Censuur en propaganda"
+          - "Onafhankelijke rechtspraak"
+          - "Vrije verkiezingen"
+        correctAnswer: 1
+
+      - question: "Waar of niet waar: Dictaturen kunnen in sommige gevallen stabiliteit brengen in een land."
+        options:
+          - "Waar"
+          - "Niet waar"
+        correctAnswer: 0
+
+  - id: "aristocratie"
+    title: "Geography Quiz"
+    description: "How well do you know aristocratie?"
+    questions:
+      - question: "Wat is de definitie van aristocratie?"
+        options:
+          - "Aristocratie is een regeringssysteem of sociale klasse waarin de macht en invloed voornamelijk in handen zijn van een kleine, bevoorrechte groep mensen, vaak gebaseerd op erfelijkheid, rijkdom of titels."
+          - "Aristocratie is een regeringsvorm waarbij alle burgers gelijke rechten hebben."
+          - "Aristocratie is een modern politiek systeem gebaseerd op verkiezingen."
+          - "Aristocratie is een economisch systeem zonder sociale klassen."
+        correctAnswer: 0
+
+      - question: "Welke van de volgende kenmerken wordt vaak geassocieerd met een aristocratische samenleving?"
+        options:
+          - "Gelijkheid voor iedereen"
+          - "Erfenis van macht en rijkdom"
+          - "Democratische verkiezingen"
+          - "Grondrechten voor iedere burger"
+        correctAnswer: 1
+
+      - question: "Welke rol speelde de aristocratie in de Europese geschiedenis, bijvoorbeeld in Frankrijk of Groot-Brittannië?"
+        options:
+          - "De aristocratie speelde een belangrijke rol in de politiek en samenleving van veel Europese landen, vaak met veel invloed op wetten en bestuur."
+          - "De aristocratie had geen enkele invloed op de Europese geschiedenis."
+          - "Aristocraten werkten altijd tegen de belangen van hun eigen land."
+          - "Aristocratie werd pas belangrijk na de Tweede Wereldoorlog."
+        correctAnswer: 0
+
+      - question: "In welk van de volgende landen bestaat een constitutionele monarchie waarbij de aristocratie een belangrijke invloed heeft?"
+        options:
+          - "Duitsland"
+          - "België"
+          - "Spanje"
+          - "Zweden"
+        correctAnswer: 2
+
+      - question: "Noem drie bekende aristocratische families in de Europese geschiedenis."
+        options:
+          - "De Medici, de Habsburgers, en de Bourbons"
+          - "De Smiths, de Johnsons, en de Williams"
+          - "De revolutionairen, de republikeinen, en de democraten"
+          - "De arbeiders, de boeren, en de ambachtslieden"
+        correctAnswer: 0
+
+      - question: "De term 'aristocratie' komt van het Griekse woord 'aristos'. Wat betekent dit woord?"
+        options:
+          - "Rechtvaardigheid"
+          - "De besten"
+          - "Vrijheid"
+          - "Gezegend"
+        correctAnswer: 1
+
+      - question: "In welk land werden de meeste aristocraten tijdens de Franse Revolutie geëxecuteerd?"
+        options:
+          - "Duitsland"
+          - "Frankrijk"
+          - "Italië"
+          - "Engeland"
+        correctAnswer: 1
+
+      - question: "Wat is het verschil tussen aristocratie en oligarchie?"
+        options:
+          - "Aristocratie is gebaseerd op erfelijke privileges, terwijl oligarchie gebaseerd is op macht van een kleine groep die niet per se adellijk is."
+          - "Er is geen verschil tussen aristocratie en oligarchie."
+          - "Oligarchie is altijd democratisch, aristocratie niet."
+          - "Aristocratie komt alleen voor in Azië, oligarchie in Europa."
+        correctAnswer: 0
+
+      - question: "Wie was een beroemde aristocraat en filosoof die zich kritisch uitliet over de aristocratie in de 18e eeuw?"
+        options:
+          - "Voltaire"
+          - "Thomas Hobbes"
+          - "Jean-Jacques Rousseau"
+          - "Immanuel Kant"
+        correctAnswer: 2
+
+      - question: "Wat is een typisch kenmerk van de adel in een aristocratisch systeem?"
+        options:
+          - "Afschaffing van privébezit"
+          - "Aanhang van religie"
+          - "Democratisch recht om te regeren"
+          - "Erfelijke privileges"
+        correctAnswer: 3
