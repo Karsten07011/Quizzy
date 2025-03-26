@@ -1,19 +1,19 @@
-// main.js - Enhanced Version
+// main.js - Complete Nederlandse Versie
 document.addEventListener("DOMContentLoaded", () => {
-  // Initialize animations
+  // Initialiseer animaties
   setupScrollAnimations();
   setupPlayButtons();
   setupIntersectionObserver();
 });
 
 function setupScrollAnimations() {
-  // Fade in elements on scroll
+  // Controleer zichtbaarheid bij scrollen
   window.addEventListener("scroll", checkVisibility);
-  checkVisibility(); // Initial check
+  checkVisibility(); // Eerste controle
 }
 
 function setupPlayButtons() {
-  // Add click event listeners to all play buttons
+  // Voeg klikgebeurtenissen toe aan alle speelknoppen
   document.querySelectorAll(".play-btn").forEach((button) => {
     button.addEventListener("click", function (e) {
       e.preventDefault();
@@ -24,68 +24,72 @@ function setupPlayButtons() {
 }
 
 function setupIntersectionObserver() {
-  // Create intersection observer for frames
-  const frameObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting && entry.intersectionRatio < 0.1) {
-          entry.target.classList.add("scroll-out");
-        } else {
-          entry.target.classList.remove("scroll-out");
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-
-  // Observe all quiz frames
-  document.querySelectorAll(".quiz-frame").forEach((frame) => {
-    frameObserver.observe(frame);
-  });
-
-  // Observer for info sections
-  const infoObserver = new IntersectionObserver(
+  // Creëer een Intersection Observer voor alle animatie-elementen
+  const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          // Fade-in animatie voor zichtbare elementen
+          if (entry.target.classList.contains("info-section")) {
+            entry.target.classList.add("visible");
+          }
+          if (entry.target.classList.contains("quiz-frame")) {
+            entry.target.classList.remove("scroll-out");
+          }
+        } else {
+          // Fade-out animatie voor niet-zichtbare elementen
+          if (
+            entry.target.classList.contains("quiz-frame") &&
+            entry.intersectionRatio < 0.1
+          ) {
+            entry.target.classList.add("scroll-out");
+          }
         }
       });
     },
-    { threshold: 0.1 }
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px",
+    }
   );
 
-  document.querySelectorAll(".info-section").forEach((section) => {
-    infoObserver.observe(section);
+  // Observeer alle elementen die moeten animeren
+  document.querySelectorAll(".quiz-frame, .info-section").forEach((element) => {
+    observer.observe(element);
   });
 }
 
 function navigateToQuiz(url) {
-  // Fade out all quiz frames
-  const frames = document.querySelectorAll(".quiz-frame");
+  // Fade out animatie voor alle frames
+  const frames = document.querySelectorAll(".quiz-frame, .info-section");
   frames.forEach((frame) => {
     frame.classList.add("exiting");
   });
 
-  // Show loading transition
+  // Toon laadscherm
   const transition = document.getElementById("pageTransition");
   transition.innerHTML = '<div class="loading-spinner"></div>';
   transition.classList.add("active");
 
-  // Navigate after animation
+  // Navigeer na animatie
   setTimeout(() => {
     window.location.href = url;
   }, 800);
 }
 
 function checkVisibility() {
-  const infoSections = document.querySelectorAll(".info-section");
-  infoSections.forEach((section) => {
-    const sectionTop = section.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+  const elements = document.querySelectorAll(".info-section, .quiz-frame");
+  const windowHeight = window.innerHeight;
 
-    if (sectionTop < windowHeight * 0.75) {
-      section.classList.add("visible");
+  elements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    const isVisible = rect.top <= windowHeight * 0.75 && rect.bottom >= 0;
+
+    if (isVisible) {
+      if (element.classList.contains("info-section")) {
+        element.classList.add("visible");
+      }
+      element.classList.remove("exiting");
     }
   });
 }
