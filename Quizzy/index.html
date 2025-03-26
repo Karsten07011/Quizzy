@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,9 +8,12 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="../CSS/homepage.css" />
   </head>
   <body>
+    <!-- Page transition overlay -->
+    <div class="page-transition" id="pageTransition"></div>
+
     <header class="header">
       <h1 class="logo">Quizzy</h1>
     </header>
@@ -31,26 +33,8 @@
               Government by the people through elected representatives
             </p>
           </div>
-          <div class="leaderboard">
-            <h4 class="leaderboard-title">Top Players</h4>
-            <div class="leaderboard-entry gold">
-              <span>1. Alex</span>
-              <span>12/12</span>
-            </div>
-            <div class="leaderboard-entry silver">
-              <span>2. Sophie</span>
-              <span>11/12</span>
-            </div>
-            <div class="leaderboard-entry bronze">
-              <span>3. Thomas</span>
-              <span>10/12</span>
-            </div>
-          </div>
           <div class="play-btn-container">
-            <button
-              class="play-btn"
-              onclick="window.location.href='./Democratie/'"
-            >
+            <button class="play-btn" onclick="navigateToQuiz('./Democratie/')">
               Play Now
               <svg
                 width="18"
@@ -81,26 +65,8 @@
               Absolute power held by single individual/group
             </p>
           </div>
-          <div class="leaderboard">
-            <h4 class="leaderboard-title">Top Players</h4>
-            <div class="leaderboard-entry gold">
-              <span>1. Emma</span>
-              <span>12/12</span>
-            </div>
-            <div class="leaderboard-entry silver">
-              <span>2. Lucas</span>
-              <span>11/12</span>
-            </div>
-            <div class="leaderboard-entry bronze">
-              <span>3. Lisa</span>
-              <span>10/12</span>
-            </div>
-          </div>
           <div class="play-btn-container">
-            <button
-              class="play-btn"
-              onclick="window.location.href='./Dictator/'"
-            >
+            <button class="play-btn" onclick="navigateToQuiz('./Dictator/')">
               Play Now
               <svg
                 width="18"
@@ -131,25 +97,10 @@
               Power held by privileged ruling class
             </p>
           </div>
-          <div class="leaderboard">
-            <h4 class="leaderboard-title">Top Players</h4>
-            <div class="leaderboard-entry gold">
-              <span>1. David</span>
-              <span>12/12</span>
-            </div>
-            <div class="leaderboard-entry silver">
-              <span>2. Sarah</span>
-              <span>11/12</span>
-            </div>
-            <div class="leaderboard-entry bronze">
-              <span>3. Mike</span>
-              <span>10/12</span>
-            </div>
-          </div>
           <div class="play-btn-container">
             <button
               class="play-btn"
-              onclick="window.location.href='./Aristocratie/'"
+              onclick="navigateToQuiz('./Aristocratie/')"
             >
               Play Now
               <svg
@@ -171,5 +122,6 @@
     <footer class="footer">
       <p>© 2023 Quizzy. All rights reserved.</p>
     </footer>
+    <script src="../Scripts/main.js"></script>
   </body>
 </html>

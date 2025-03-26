@@ -1,0 +1,358 @@
+/* homepage.css */
+:root {
+  --primary: #2A2A3E;
+  --secondary: #3A3A4E;
+  --accent: #06D6A0;
+  --accent-hover: #04B486;
+  --text: #FFFFFF;
+  --overlay: rgba(0, 0, 0, 0.7);
+  --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --bounce: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1A1A2E 0%, #16213E 100%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Fade-in Animation for Page Load */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+body {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Modern Navbar with Fade-in */
+.header {
+  background: rgba(42, 42, 62, 0.95);
+  padding: 1.5rem 2rem;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  animation: slideDown 0.6s var(--bounce) 0.2s forwards;
+}
+
+@keyframes slideDown {
+  to { transform: translateY(0); }
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--accent), #118AB2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 0.4s forwards;
+}
+
+/* Quiz Container Grid with Staggered Animation */
+.quiz-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  margin-top: 6rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Quiz Frame Styling with Glow Effect */
+.quiz-frame {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  transition: var(--transition);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 0.8s var(--bounce) forwards;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.quiz-frame:nth-child(1) { animation-delay: 0.3s; }
+.quiz-frame:nth-child(2) { animation-delay: 0.5s; }
+.quiz-frame:nth-child(3) { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.quiz-frame::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+  z-index: 1;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.quiz-frame:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255,255,255,0.2);
+}
+
+.quiz-frame:hover::before {
+  opacity: 1;
+}
+
+/* Glow Effect on Hover */
+.quiz-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(6, 214, 160, 0.3);
+  opacity: 0;
+  transition: var(--transition);
+  pointer-events: none;
+}
+
+#democracy-frame::after { box-shadow: 0 0 30px rgba(6, 214, 160, 0.4); }
+#dictatorship-frame::after { box-shadow: 0 0 30px rgba(233, 69, 96, 0.4); }
+#aristocracy-frame::after { box-shadow: 0 0 30px rgba(106, 76, 147, 0.4); }
+
+.quiz-frame:hover::after {
+  opacity: 0.8;
+}
+
+.quiz-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.quiz-frame:hover .quiz-image {
+  transform: scale(1.08);
+}
+
+/* Overlay Styling with Fade */
+.quiz-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  z-index: 2;
+}
+
+.quiz-frame:hover .quiz-overlay {
+  opacity: 1;
+  backdrop-filter: blur(4px);
+}
+
+/* Quiz Info Styling with Slide-up */
+.quiz-info {
+  background: rgba(42, 42, 62, 0.9);
+  padding: 1.5rem;
+  border-radius: 15px;
+  transform: translateY(-30px);
+  opacity: 0;
+  transition: var(--transition) 0.2s;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-left: 4px solid;
+}
+
+.quiz-frame:hover .quiz-info {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.quiz-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--transition) 0.3s;
+}
+
+.quiz-description {
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--transition) 0.4s;
+}
+
+.quiz-frame:hover .quiz-title,
+.quiz-frame:hover .quiz-description {
+  opacity: 0.9;
+  transform: translateX(0);
+}
+
+/* Play Button Styling with Pulse Effect */
+.play-btn-container {
+  display: flex;
+  justify-content: center;
+  transform: translateY(30px);
+  opacity: 0;
+  transition: var(--transition) 0.3s;
+}
+
+.quiz-frame:hover .play-btn-container {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.play-btn {
+  background: linear-gradient(45deg, var(--accent), #118AB2);
+  color: var(--text);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(6, 214, 160, 0.3);
+}
+
+.play-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: 0.5s;
+}
+
+.play-btn:hover {
+  background: linear-gradient(45deg, var(--accent-hover), #0E6F8B);
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(6, 214, 160, 0.4);
+}
+
+.play-btn:hover::before {
+  left: 100%;
+}
+
+.play-btn svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.play-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Page Transition Effect */
+.page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #06D6A0 0%, #118AB2 100%);
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-transition.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Footer with Fade-in */
+.footer {
+  background: var(--primary);
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: auto;
+  font-size: 0.9rem;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out 1s forwards;
+}
+
+/* Frame-specific Accents */
+#democracy-frame .quiz-info { border-color: #06D6A0; }
+#dictatorship-frame .quiz-info { border-color: #E94560; }
+#aristocracy-frame .quiz-info { border-color: #6A4C93; }
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .quiz-container {
+    grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    padding: 1rem;
+  }
+
+  .header {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}
