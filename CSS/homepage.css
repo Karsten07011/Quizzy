@@ -1,4 +1,3 @@
-/* homepage.css - Nederlandse Versie */
 :root {
   --primary: #1a1a2e;
   --secondary: #16213e;
@@ -11,7 +10,7 @@
   --glow: 0 0 20px;
 }
 
-/* Basisstijlen */
+
 * {
   margin: 0;
   padding: 0;
@@ -27,7 +26,6 @@ body {
   flex-direction: column;
 }
 
-/* Animaties */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -79,7 +77,6 @@ body {
   }
 }
 
-/* Navigatiebalk */
 .header {
   background: rgba(42, 42, 62, 0.95);
   padding: 1.5rem 2rem;
@@ -105,12 +102,10 @@ body {
   animation: fadeIn 0.8s ease-out 0.4s forwards;
 }
 
-/* Hoofdinhoud */
 .main-content {
   padding-top: 6rem;
 }
 
-/* Quiz Overzicht Sectie */
 .quiz-preview-section {
   padding: 4rem 2rem;
   max-width: 1400px;
@@ -133,7 +128,6 @@ body {
   margin-bottom: 4rem;
 }
 
-/* Quiz Frame Stijlen */
 .quiz-frame {
   position: relative;
   border-radius: 20px;
@@ -174,7 +168,6 @@ body {
   transition: var(--transition);
 }
 
-/* Gloeiende Rand bij Hover */
 .quiz-frame:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -196,7 +189,6 @@ body {
   transform: scale(1.08);
 }
 
-/* Quiz Overlay */
 .quiz-overlay {
   position: absolute;
   top: 0;
@@ -222,7 +214,6 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* Quiz Info */
 .quiz-info {
   background: rgba(42, 42, 62, 0.9);
   padding: 1.5rem;
@@ -260,7 +251,6 @@ body {
   transform: translateX(0);
 }
 
-/* Speel Knop */
 .play-btn-container {
   display: flex;
   justify-content: center;
@@ -308,7 +298,6 @@ body {
   transform: translateX(5px);
 }
 
-/* Pagina Overgang */
 .page-transition {
   position: fixed;
   top: 0;
@@ -339,7 +328,6 @@ body {
   animation: spin 1s ease-in-out infinite;
 }
 
-/* Informatie Secties */
 .info-section {
   padding: 4rem 2rem;
   max-width: 1400px;
@@ -404,7 +392,6 @@ body {
   opacity: 0.9;
 }
 
-/* Frame-specifieke Stijlen */
 #democracy-frame .quiz-info,
 #democracy-info .info-card {
   border-color: #06d6a0;
@@ -420,7 +407,6 @@ body {
   border-color: #6a4c93;
 }
 
-/* Footer */
 .footer {
   background: var(--primary);
   padding: 1.5rem;
@@ -431,13 +417,11 @@ body {
   animation: fadeIn 0.8s ease-out 1s forwards;
 }
 
-/* Uit-animaties */
 .quiz-frame.exiting,
 .quiz-frame.scroll-out {
   animation: fadeOut 0.5s ease forwards;
 }
 
-/* Responsief Ontwerp */
 @media (max-width: 1200px) {
   .quiz-container,
   .info-content {

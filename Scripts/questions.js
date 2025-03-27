@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Get quiz ID from URL
   const urlParams = new URLSearchParams(window.location.search);
   const quizId = urlParams.get("quiz");
 
-  // DOM elements
   const quizContainer = document.querySelector(".quiz-container");
   const quizTitle = document.getElementById("quiz-title");
   const quizDescription = document.getElementById("quiz-description");
@@ -21,7 +19,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const progressFill = document.getElementById("progress-fill");
   const confirmButton = document.getElementById("confirm-button");
 
-  // Quiz state
   let currentQuiz = null;
   let questions = [];
   let currentQuestionIndex = 0;
@@ -29,13 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let quizCompleted = false;
   let selectedAnswerIndex = null;
 
-  // Load the selected quiz
   async function loadQuiz() {
     try {
-      // Show loading state
       questionText.textContent = "Loading quiz...";
 
-      // Load YML file
       const response = await fetch("../quizzes.yml");
       if (!response.ok) throw new Error("Failed to load quizzes");
 
@@ -44,11 +38,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!parsedData.quizzes) throw new Error("Invalid quiz format");
 
-      // Find the selected quiz
       currentQuiz = parsedData.quizzes.find((q) => q.id === quizId);
 
       if (!currentQuiz) {
-        // Quiz not found, redirect to homepage after delay
         questionText.textContent = "Quiz not found. Redirecting...";
         setTimeout(() => (window.location.href = "index.html"), 2000);
         return;
@@ -63,20 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initializeQuiz() {
-    // Set quiz title and description
     quizTitle.textContent = currentQuiz.title;
     quizDescription.textContent = currentQuiz.description;
 
-    // Initialize progress
     totalQuestionsElement.textContent = questions.length;
 
-    // Load saved score if exists
     const savedScore = localStorage.getItem(`quizScore_${quizId}`);
     if (savedScore) {
       score = parseInt(savedScore);
     }
 
-    // Show first question
     showQuestion();
   }
 
@@ -86,16 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Reset selection state
     selectedAnswerIndex = null;
 
     const question = questions[currentQuestionIndex];
     questionText.textContent = question.question;
 
-    // Clear previous options
     optionsContainer.innerHTML = "";
 
-    // Create option buttons
     question.options.forEach((option, index) => {
       const button = document.createElement("button");
       button.textContent = option;
@@ -104,10 +89,8 @@ document.addEventListener("DOMContentLoaded", () => {
       optionsContainer.appendChild(button);
     });
 
-    // Update progress
     updateProgress();
 
-    // Hide feedback and buttons
     feedbackElement.classList.add("hidden");
     nextButton.classList.add("hidden");
     confirmButton.classList.add("hidden");
@@ -123,17 +106,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function selectAnswer(index, button) {
-    // Reset previous selection if any
     const optionButtons = document.querySelectorAll(".option-button");
     optionButtons.forEach((btn) => {
       btn.classList.remove("selected");
     });
 
-    // Mark new selection
     selectedAnswerIndex = index;
     button.classList.add("selected");
 
-    // Show confirm button
     confirmButton.classList.remove("hidden");
   }
 
@@ -143,25 +123,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const question = questions[currentQuestionIndex];
     const optionButtons = document.querySelectorAll(".option-button");
 
-    // Disable all buttons
     optionButtons.forEach((button) => {
       button.disabled = true;
     });
 
-    // Check if answer is correct
     const isCorrect = selectedAnswerIndex === question.correctAnswer;
 
     if (isCorrect) {
-      // Update score
       score++;
       localStorage.setItem(`quizScore_${quizId}`, score);
 
-      // Visual feedback
       optionButtons[selectedAnswerIndex].classList.add("correct");
       feedbackElement.textContent = "Correct!";
       feedbackElement.className = "feedback correct";
     } else {
-      // Visual feedback
       optionButtons[selectedAnswerIndex].classList.add("incorrect");
       optionButtons[question.correctAnswer].classList.add("correct");
       feedbackElement.textContent = `Incorrect. The correct answer is: ${
@@ -170,7 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
       feedbackElement.className = "feedback incorrect";
     }
 
-    // Hide confirm button and show next button
     confirmButton.classList.add("hidden");
     feedbackElement.classList.remove("hidden");
     nextButton.classList.remove("hidden");
@@ -197,10 +171,8 @@ document.addEventListener("DOMContentLoaded", () => {
     scoreElement.textContent = score;
     totalElement.textContent = questions.length;
 
-    // Update progress to 100%
     progressFill.style.width = "100%";
 
-    // Save final score
     localStorage.setItem(`quizScore_${quizId}`, score);
   }
 
@@ -210,10 +182,8 @@ document.addEventListener("DOMContentLoaded", () => {
     quizCompleted = false;
     selectedAnswerIndex = null;
 
-    // Clear saved score
     localStorage.removeItem(`quizScore_${quizId}`);
 
-    // Reset UI
     questionText.classList.remove("hidden");
     optionsContainer.classList.remove("hidden");
     resultsContainer.classList.add("hidden");
@@ -221,7 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.classList.add("hidden");
     confirmButton.classList.add("hidden");
 
-    // Show first question
     showQuestion();
   }
 
@@ -235,7 +204,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
   }
 
-  // Event listeners
   nextButton.addEventListener("click", nextQuestion);
   restartButton.addEventListener("click", restartQuiz);
   confirmButton.addEventListener("click", confirmAnswer);
@@ -246,11 +214,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Load the selected quiz when page loads
   if (quizId) {
     loadQuiz();
   } else {
-    // No quiz selected, redirect to homepage
     window.location.href = "../index.html";
   }
 });

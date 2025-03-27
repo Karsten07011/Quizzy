@@ -1,6 +1,4 @@
-/* quiz.css - Complete Styling File */
 
-/* Base Styles & Background */
 :root {
   --primary: #2a2a3e;
   --secondary: #3a3a4e;
@@ -32,7 +30,6 @@ body {
   line-height: 1.6;
 }
 
-/* Animated Background Elements */
 body::before,
 body::after {
   content: "";
@@ -79,7 +76,6 @@ body::after {
   }
 }
 
-/* Main Quiz Container */
 .quiz-container {
   position: relative;
   z-index: 10;
@@ -114,7 +110,6 @@ body::after {
   z-index: -1;
 }
 
-/* Question Styling */
 #question-text {
   text-align: center;
   margin-bottom: 2rem;
@@ -141,7 +136,6 @@ body::after {
   );
 }
 
-/* Options Grid */
 #options-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -187,7 +181,6 @@ body::after {
   color: #e74c3c;
 }
 
-/* Progress Bar */
 .progress-container {
   margin: 2rem 0;
 }
@@ -215,7 +208,6 @@ body::after {
   border-radius: 10px;
 }
 
-/* Action Buttons */
 .action-button {
   background: linear-gradient(45deg, var(--accent), #118ab2);
   color: var(--text);
@@ -261,7 +253,6 @@ body::after {
   left: 100%;
 }
 
-/* Feedback Messages */
 #feedback {
   padding: 1.2rem;
   border-radius: 12px;
@@ -283,7 +274,6 @@ body::after {
   border: 1px solid rgba(231, 76, 60, 0.3);
 }
 
-/* Results Container */
 #results-container {
   text-align: center;
   padding: 2rem;
@@ -326,12 +316,10 @@ body::after {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* Hidden Elements */
 .hidden {
   display: none !important;
 }
 
-/* Particle Effects */
 .particle {
   position: absolute;
   background: rgba(6, 214, 160, 0.3);
@@ -341,7 +329,6 @@ body::after {
   animation: float 15s infinite linear;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .quiz-container {
     padding: 2rem 1.5rem;
